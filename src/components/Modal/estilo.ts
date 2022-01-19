@@ -1,8 +1,5 @@
 import styled from 'styled-components';
 
-
-
-
 export const Container = styled.div`
     position: fixed;
     z-index: 3;
@@ -29,7 +26,7 @@ export const Titulo = styled.h1`
     color: #666666;
 `
 
-export const Button = styled.button`
+export const ButtonFechar = styled.button`
     grid-area: button;
     justify-self: end;
     align-self: center;
@@ -44,7 +41,9 @@ export const Linha = styled.hr`
     height: 0.063rem;
     width: calc(100% + 32px);
     transform: translateX(-16px);
+`
 
-}
+export const WrapperContent = styled.div`
+    grid-area: content;
 
 `

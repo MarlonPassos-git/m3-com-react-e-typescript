@@ -34,32 +34,32 @@ export const Container = styled.form<ContainerProps>`
 
 `
 
+
+
 export const Opcoes = styled.div`
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    transform: translate(-1px ,100%);
+    position: ${(props) => props.theme.opcoes.position};
+    bottom: ${(props) => props.theme.opcoes.bottom};
+    left: ${(props) => props.theme.opcoes.left};
+    transform: ${(props) => props.theme.opcoes.transform};
     display: grid;
     grid-template-row: repeat(3, 1fr);
     align-items: center;
+    gap: ${(props) => props.theme.opcoes.gap};
 
-    height: 107px;
-    width: 8.875rem;
-    border: var(--black) solid 0.063rem;
+    height: ${(props) => props.theme.opcoes.height};
+    width: ${(props) => props.theme.opcoes.width};
+    border: ${(props) => props.theme.opcoes.border};
     
-    font-size: var(--font-small);
+    font-size: ${(props) => props.theme.opcoes['font-size']};
     color: var(--black);
-    
-
 `
 
 export const Opcao = styled.button`
-    padding-left: 0.625rem;
+    padding-left: ${(props) => props.theme.opcoes['padding-left']};
     height: 100%;
 
     background-color: var(--white);
 
-    
 
     &:hover, &:focus-visible{
         background-color: var(--black);

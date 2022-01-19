@@ -1,28 +1,46 @@
 import { Input } from "../Input";
-import { Titulo, WrapperForm, WrapperInputs } from "./estilos";
+import { Titulo, TituloA, WrapperForm, WrapperFormA, WrapperInputs } from "./estilos";
 
 interface SassaoProps {
     tamanhos: string[];
+    mostrarImputs?: boolean;
+
 }
+export function SessaoTamanhos ({tamanhos, mostrarImputs}: SassaoProps) {
 
-export function SessaoTamanhos ({tamanhos}: SassaoProps) {
 
+  const inputs = tamanhos.map((tamanho, index) => (
+    <Input 
+      key={index}
+      tipoInput="tamanho"
+      texto={tamanho}
+    />
+  ))
 
   return (
-    <WrapperForm>
+    (mostrarImputs) ? 
+    
+    (
+      <WrapperForm>
         <Titulo>
           Tamanhos
         </Titulo>
         <WrapperInputs>
-        {tamanhos.map((tamanho, index) => (
-            <Input 
-              key={index}
-              tipoInput="tamanho"
-              texto={tamanho}
-            />
-          ))}
+          {inputs}
         </WrapperInputs>
       </WrapperForm>
+    ) : 
+    (
+      <WrapperFormA>
+        <TituloA>
+          Tamanhos
+        </TituloA>
+        <WrapperInputs>
+          {inputs}
+        </WrapperInputs>
+      </WrapperFormA>
+    
+    )
   )
 }
 

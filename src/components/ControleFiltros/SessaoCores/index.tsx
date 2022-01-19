@@ -1,30 +1,37 @@
 import { useState } from "react";
 import { Input } from "../Input";
-import { BotaoMostraMaisCores, Titulo, WrapperForm, WrapperInputs } from "./estilos";
+import { BotaoMostraMaisCores, Titulo, TituloA, WrapperForm, WrapperFormA, WrapperInputs } from "./estilos";
 
 interface SassaoProps {
     cores: string[];
+    mostrarImputs?: boolean;
 }
 
-export function SessaoCores({ cores }: SassaoProps) {
+export function SessaoCores({ cores, mostrarImputs }: SassaoProps) {
   const [mostraTudo, setMostraTudo] = useState(false)
 
+  const Iputs = cores.map((cor, index) => (
+    <Input 
+      key={index}
+      tipoInput="cor"
+      texto={cor} 
+    />
+  ))
+
+  console.log(mostrarImputs)
 
   return (
-    <WrapperForm>
+
+    (mostrarImputs) ? 
+    (
+      <WrapperForm>
         <Titulo>
           Cores
         </Titulo>
         <WrapperInputs
           mostraTudo={mostraTudo}
         >
-          {cores.map((cor, index) => (
-            <Input 
-              key={index}
-              tipoInput="cor"
-              texto={cor} 
-            />
-          ))}
+          {Iputs} 
         </WrapperInputs>
         {!mostraTudo && (
           <BotaoMostraMaisCores
@@ -32,9 +39,28 @@ export function SessaoCores({ cores }: SassaoProps) {
           >
             Ver todas as cores
           </BotaoMostraMaisCores>
-        )} 
-
-        
+        )}   
       </WrapperForm>
+    ) : 
+    (
+      <WrapperFormA>
+        <TituloA>
+          Cores
+        </TituloA>
+        <WrapperInputs
+          mostraTudo={mostraTudo}
+        >
+          {Iputs} 
+        </WrapperInputs>
+        {!mostraTudo && (
+          <BotaoMostraMaisCores
+            onClick={() => setMostraTudo(true)}
+          >
+            Ver todas as cores
+          </BotaoMostraMaisCores>
+        )}   
+      </WrapperFormA>
+     
+    )
   )
 } 

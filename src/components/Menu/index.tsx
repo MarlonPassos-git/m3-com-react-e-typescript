@@ -34,14 +34,18 @@ export function Menu () {
                 </BotoesModal>
                 <BotoesModal
                     gridArea="ordenar"
-                    titulo="Ordenar"
+                    titulo="Ordernar"
                 >
-                    <ControladorOrdem />
+                    <ControladorOrdem
+                        estaNoModal={true}
+                    />
                 </BotoesModal>
             </>) : (<>  
                 <ControladorOrdem />
                 <Aside>
-                    <ControleFiltros/>
+                    <ControleFiltros
+                    mostrarImputs={true}
+                    />
                 </Aside>
                 
             </>)}

@@ -1,4 +1,4 @@
-import { Button, Container, Linha, Titulo } from "./estilo";
+import { ButtonFechar, Container, Linha, Titulo, WrapperContent } from "./estilo";
 
 interface ModalProps {
   titulo: string,
@@ -14,13 +14,14 @@ export function Modal ({titulo, fecharModal, children}: ModalProps) {
         {titulo}
       </Titulo>
       <Linha/>
-      <Button
+      <ButtonFechar
         onClick={() => fecharModal(false)}
       >
         X
-      </Button>
-        
-      {children}
+      </ButtonFechar>
+      <WrapperContent>
+        {children}
+      </WrapperContent>
     </Container>
   )
 }
