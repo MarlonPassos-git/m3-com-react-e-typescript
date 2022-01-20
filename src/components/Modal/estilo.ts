@@ -11,9 +11,16 @@ export const Container = styled.div`
     grid-template:
         "title button" 4.375rem
         "line line" 30px
-        "content content"/1fr 1fr;
+        "content content" 
+        "botaoFiltrar botaoLimparFiltros" 35px
+        /1fr 1fr;
+
     background: var(--white);
     padding: 0 16px;
+    column-gap: 23px;
+    padding-bottom: 17px;
+
+    overflow-y: scroll;
 
 `
 
@@ -46,4 +53,50 @@ export const Linha = styled.hr`
 export const WrapperContent = styled.div`
     grid-area: content;
 
+
+    button {
+
+        &:hover {
+            background: none;
+            color: var(--black);
+        }
+    }
+
 `
+
+export const BotaoFiltrar = styled.button`
+    grid-area: botaoFiltrar;
+    align-self: end;
+
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+    height: 35px;
+    text-align: center;
+
+    background-color: var(--primary);
+    color: var(--white);    
+    border: var(--primary) solid 3px;
+    transition: all 0.3s;
+
+    &:hover {
+        background-color: var(--white);
+        color: var(--primary);
+        font-weight: bold;
+        
+    }
+
+`
+
+export const BotaoLimparFiltros = styled(BotaoFiltrar)`
+    grid-area: botaoLimparFiltros;
+    
+    background-color: var(--white);
+    color: #666666;  
+    border: #666666 solid 1px;
+
+    &:hover {
+        background-color: #666666;;
+        color: var(--white);
+    }
+`   

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
-import { ButtonFechar, Container, Linha, Titulo, WrapperContent } from "./estilo";
+import { useDados } from "../../context/dados";
+import { BotaoFiltrar, BotaoLimparFiltros, ButtonFechar, Container, Linha, Titulo, WrapperContent } from "./estilo";
 
 interface ModalProps {
   titulo: string,
@@ -9,6 +10,7 @@ interface ModalProps {
 
 export function Modal ({titulo, fecharModal, children}: ModalProps) {
 
+  const {setFiltros} = useDados()
   
   return (
     <Container>
@@ -24,6 +26,16 @@ export function Modal ({titulo, fecharModal, children}: ModalProps) {
       <WrapperContent>
         {children}
       </WrapperContent>
+      {titulo === "Filtrar" && <>
+        <BotaoFiltrar
+          onClick={() => fecharModal(false)}
+        > 
+          Aplicar
+        </BotaoFiltrar>
+        <BotaoLimparFiltros
+          onClick={() => setFiltros({cores:[], tamanhos:[], faixaPrecos:[]})}
+        >Limpar</BotaoLimparFiltros>
+      </> }
     </Container>
   )
 }

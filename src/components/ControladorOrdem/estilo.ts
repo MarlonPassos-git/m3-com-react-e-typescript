@@ -64,6 +64,7 @@ export const Opcao = styled.button`
     &:hover, &:focus-visible{
         background-color: var(--black);
         color: var(--white);
+        font-weight: bold;
     }
 
 `
