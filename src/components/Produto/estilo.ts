@@ -16,7 +16,7 @@ export const Img = styled.img`
     transition: all 0.5s ease;
     cursor: pointer;
 
-    &:hover {
+    &:hover, &:focus-visible{
         transform: scale(1.05);
     }
 `
@@ -27,6 +27,15 @@ export const WraperImg = styled.a`
 
     height: max(15.125rem, min(14.063rem + 4.5vw, 18.3125rem));
     overflow: hidden;
+
+    &:focus-visible{
+
+      border: 1px solid var(--primary);
+
+      img {
+        transform: scale(1.15);
+      }
+    }
 
 `
 
@@ -60,7 +69,7 @@ export const Botao = styled.button`
     transition-property: color, background-color;
     transition-duration: 0.5s;
 
-    &:hover {
+    &:hover, &:focus-visible{
       border: 3px solid var(--black);
       background-color: var(--white);
       color: var(--black);

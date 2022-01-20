@@ -35,6 +35,7 @@ export function SessaoCores({ cores, mostrarImputs }: SassaoProps) {
         </WrapperInputs>
         {!mostraTudo && (
           <BotaoMostraMaisCores
+            arial-label="Clique para mostrar todas as cores"
             onClick={() => setMostraTudo(true)}
           >
             Ver todas as cores

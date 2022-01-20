@@ -51,6 +51,7 @@ export function Input ({ tipoSessao, tipoInput, texto, value }: InputProps) {
                 name="cor"
                 onClick={handleInput}
                 onChange={handleInput}
+                onKeyDown={({key}) => key === 'Enter' && handleInput()}
                 checked={filtros[tipoSessao].includes(value)}
             />
             <Texto>

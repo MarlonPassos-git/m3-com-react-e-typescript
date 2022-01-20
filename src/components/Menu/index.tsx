@@ -13,8 +13,6 @@ export function Menu () {
 
     useEffect(() => {
         window.addEventListener("resize", ()=> {
-
-
             window.innerWidth <= 750 ? SetMobile(true) : SetMobile(false);
         }) 
     }, [])
@@ -24,7 +22,6 @@ export function Menu () {
             <Titulo>
                 Blusas
             </Titulo>
-            <ListaProdutos/>
             {(Mobile) ? (<>
                 <BotoesModal
                     gridArea="filtrar"
@@ -49,6 +46,7 @@ export function Menu () {
                 </Aside>
                 
             </>)}
+            <ListaProdutos/>
             
             <BotaoMostraMaisItens />
         </Container>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ButtonFechar, Container, Linha, Titulo, WrapperContent } from "./estilo";
 
 interface ModalProps {
@@ -8,6 +9,7 @@ interface ModalProps {
 
 export function Modal ({titulo, fecharModal, children}: ModalProps) {
 
+  
   return (
     <Container>
       <Titulo>

@@ -20,7 +20,7 @@ export const Container = styled.button`
     transition-duration: 0.5s;
 
 
-    &:hover {
+    &:hover, &:focus-visible{
       border: 3px solid var(--primary);
       background-color: var(--white);
       color: var(--primary);

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "../Modal";
 import { Botao} from "./estilo";
 
@@ -12,6 +12,10 @@ interface IBotoesModal {
 export function BotoesModal ({gridArea, children, titulo}:IBotoesModal) {
 
   const [modalVisivel, setModalVisivel] = useState(false);
+
+  useEffect(() => {
+      document.body.style.overflow = modalVisivel ? "hidden" : "auto";
+  }, [modalVisivel])
 
   return (
     <>

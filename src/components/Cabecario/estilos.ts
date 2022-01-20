@@ -6,6 +6,7 @@ export const Container = styled.header`
   justify-content: space-between;
 
   height: 4rem;
+  
   padding: 0 var(--spacing-container-padding);
   border-bottom: 0.125rem solid var(--gray-100);
    
@@ -13,5 +14,5 @@ export const Container = styled.header`
 `
 
 export const Img = styled.img`
-
+  width:  119px;
 `

@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
 
 interface ContainerProps {
@@ -36,31 +36,31 @@ export const Container = styled.form<ContainerProps>`
 
 
 
-export const Opcoes = styled.div`
-    position: ${(props) => props.theme.opcoes.position};
-    bottom: ${(props) => props.theme.opcoes.bottom};
-    left: ${(props) => props.theme.opcoes.left};
-    transform: ${(props) => props.theme.opcoes.transform};
-    display: grid;
-    grid-template-row: repeat(3, 1fr);
-    align-items: center;
-    gap: ${(props) => props.theme.opcoes.gap};
 
-    height: ${(props) => props.theme.opcoes.height};
-    width: ${(props) => props.theme.opcoes.width};
-    border: ${(props) => props.theme.opcoes.border};
-    
-    font-size: ${(props) => props.theme.opcoes['font-size']};
+export const Opcoes = styled.div`${({ theme: {opcoes}}) => css` 
+    position: ${opcoes.position};
+    bottom: ${opcoes.bottom};
+    left: ${opcoes.left};
+    transform: ${opcoes.transform};
+    gap: ${opcoes.gap};
+    height: ${opcoes.height};
+    width: ${opcoes.width};
+    border: ${opcoes.border};
+    font-size: ${opcoes['font-size']};
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
     color: var(--black);
-`
+`}` 
+
 
 export const Opcao = styled.button`
-    padding-left: ${(props) => props.theme.opcoes['padding-left']};
+    padding-left: ${({theme}) => theme.opcao['padding-left']};
     height: 100%;
 
     background-color: var(--white);
 
-
+    
     &:hover, &:focus-visible{
         background-color: var(--black);
         color: var(--white);

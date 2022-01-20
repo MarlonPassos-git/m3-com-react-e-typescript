@@ -30,6 +30,7 @@ export function Produto({dadosProduto}: ProdutoProps ) {
                 até {totalParcealas}x de {valorParcela}
             </Parcelamento>
             <Botao 
+              aria-label={`Adicionar ${name} ao carrinho`}
               onClick={() => setTotalProdutosCarrinho(totalProdutosCarrinho + 1)}
             >
                 Comprar
