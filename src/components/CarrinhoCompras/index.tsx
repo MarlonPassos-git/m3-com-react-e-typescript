@@ -1,6 +1,9 @@
+import { useDados } from "../../context/dados";
 import { Container, Img, TotalItens } from "./estilos";
 
 export function CarrinhoCompras() {
+
+  const {totalProdutosCarrinho} = useDados();
 
     return (
         <Container>
@@ -9,7 +12,7 @@ export function CarrinhoCompras() {
             alt=""
           />
           <TotalItens>
-            0
+            {totalProdutosCarrinho}
           </TotalItens>
         </Container>
     )

@@ -17,6 +17,8 @@ interface DadosContextProps {
     produtosPorVez: number,
     filtros: IFiltros,
     setFiltros: (filtros:IFiltros)=> void,
+    totalProdutosCarrinho : number, 
+    setTotalProdutosCarrinho: (totalProdutosCarrinho:number)=> void,
 
 }
 
@@ -36,6 +38,7 @@ export const DadosProvider = ({ children }: DadosProps) => {
     const [numeroProdutosTela, setNumeroProdutosTela] = useState<number>(produtosPorVez);
     const [produtosVisiveis, setProdutosVisiveis] = useState<Array<IProduto>>([]);
     const [filtros, setFiltros] = useState<IFiltros>({cores:[], tamanhos:[], faixaPrecos:[]})
+    const [totalProdutosCarrinho, setTotalProdutosCarrinho] = useState<number>(0)
 
     useEffect(() => {
         setProdutosVisiveis(telaProdutos.slice(0, numeroProdutosTela));
@@ -81,7 +84,8 @@ export const DadosProvider = ({ children }: DadosProps) => {
                 numeroProdutosTela, setNumeroProdutosTela,
                 produtosVisiveis, setProdutosVisiveis,
                 filtros, setFiltros,
-                produtosPorVez
+                produtosPorVez,
+                totalProdutosCarrinho, setTotalProdutosCarrinho
             }}
         >
             {children}

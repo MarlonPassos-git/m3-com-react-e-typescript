@@ -21,7 +21,7 @@ export function SessaoTamanhos ({tamanhos, mostrarImputs}: SassaoProps) {
 
   return (
     (mostrarImputs) ? 
-    
+      
     (
       <WrapperForm>
         <Titulo>

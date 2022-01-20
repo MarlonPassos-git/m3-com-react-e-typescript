@@ -1,3 +1,4 @@
+import { useDados } from '../../context/dados';
 import { IProduto } from '../../types/dadosProps'
 import { Botao, Container, Img, Parcelamento, Preco, Tituto, WraperImg } from './estilo'
 
@@ -7,6 +8,7 @@ interface ProdutoProps {
 
 export function Produto({dadosProduto}: ProdutoProps ) {
 
+  const {totalProdutosCarrinho, setTotalProdutosCarrinho} = useDados();
   const {image, name, price, parcelamento} = dadosProduto
   const precoFormatado = formataParaReal(price)
   const totalParcealas = parcelamento[0]
@@ -28,7 +30,7 @@ export function Produto({dadosProduto}: ProdutoProps ) {
                 até {totalParcealas}x de {valorParcela}
             </Parcelamento>
             <Botao 
-              
+              onClick={() => setTotalProdutosCarrinho(totalProdutosCarrinho + 1)}
             >
                 Comprar
             </Botao>
