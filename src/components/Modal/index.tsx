@@ -19,9 +19,10 @@ export function Modal ({titulo, fecharModal, children}: ModalProps) {
       </Titulo>
       <Linha/>
       <ButtonFechar
+      aria-label={`Fechar pagina de ${titulo}`}
         onClick={() => fecharModal(false)}
       >
-        X
+        <img src="./images/x.svg" alt="Fechar pagina"/>
       </ButtonFechar>
       <WrapperContent>
         {children}
