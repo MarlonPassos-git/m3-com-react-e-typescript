@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface ContainerProps {
-    tipoInput?: string;
+  tipoSessao?: string;
 }
 
 
@@ -13,7 +13,7 @@ export const Container = styled.label<ContainerProps>`
     cursor: pointer;
     text-transform: capitalize;
 
-    ${({ tipoInput }) => (tipoInput === 'tamanho' ) && 
+    ${({ tipoSessao }) => (tipoSessao === 'tamanhos' ) && 
     `
     display: grid;
     grid-template-columns: 1fr;

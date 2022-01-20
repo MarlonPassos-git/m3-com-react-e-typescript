@@ -1,22 +1,63 @@
+import { useDados } from "../../../context/dados";
 import { Checkbox, Container, Texto } from "./estilos";
 
 interface InputProps {
-    tipoInput: string;
+    tipoSessao: 'cores' | 'tamanhos' | 'faixaPrecos';
     texto: string;
+    value: string 
+    tipoInput: 'checkbox' | 'radio'
 }
 
-export function Input ({ tipoInput, texto }: InputProps) {
+export function Input ({ tipoSessao, tipoInput, texto, value }: InputProps) {
+
+    const {filtros, setFiltros} = useDados()
+    
+    function handleInput() {
+
+        if (tipoInput === 'radio') { 
+
+            if (filtros[tipoSessao][0] === value) {
+            setFiltros({
+                ...filtros,
+                [tipoSessao]: []
+            })}
+            else {
+                setFiltros({
+                    ...filtros,
+                    [tipoSessao]: [value]
+                })
+            }
+        }
+        else  if(filtros[tipoSessao].includes(value)){
+            setFiltros({
+                ...filtros,
+                [tipoSessao]: filtros[tipoSessao].filter(item => item !== value)
+            })
+        }
+        else{
+            setFiltros({
+                ...filtros,
+                [tipoSessao]: [...filtros[tipoSessao], value]
+            })
+        }
+    }
 
     return (
         <Container
-            tipoInput={tipoInput}
+        tipoSessao={tipoSessao}
         >
             <Checkbox 
-                type="checkbox"
+                type={tipoInput}
                 name="cor"
-                value={texto}
+                onClick={handleInput}
+                onChange={handleInput}
+                checked={filtros[tipoSessao].includes(value)}
             />
-            <Texto>{ texto }</Texto> 
+            <Texto>
+                {texto}
+            </Texto>
         </Container>
     )
+
+               
 }

@@ -9,7 +9,7 @@ interface Idados {
   tamanhos: string[];
   faixaPrecos: {
       text: string;
-      value: number[];
+      value: string;
   }[];
   
 }
@@ -27,9 +27,7 @@ export function ControleFiltros({mostrarImputs}: ControleFiltrosProps) {
 
   return (
       
-    <Container
-      onChange={(e) => {console.log(e.currentTarget)}}
-    >  
+    <Container>  
       <SessaoCores mostrarImputs={mostrarImputs} cores={cores}/>
       <SessaoTamanhos mostrarImputs={mostrarImputs} tamanhos={tamanhos}/>
       <SessaoFaixaPrecos mostrarImputs={mostrarImputs} faixaPrecos={faixaPrecos}/>

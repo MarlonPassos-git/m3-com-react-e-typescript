@@ -12,8 +12,10 @@ export function SessaoTamanhos ({tamanhos, mostrarImputs}: SassaoProps) {
   const inputs = tamanhos.map((tamanho, index) => (
     <Input 
       key={index}
-      tipoInput="tamanho"
+      tipoSessao="tamanhos"
       texto={tamanho}
+      value={tamanho}
+      tipoInput="checkbox"
     />
   ))
 

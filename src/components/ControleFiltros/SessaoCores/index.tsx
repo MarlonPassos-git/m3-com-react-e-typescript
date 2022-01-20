@@ -13,12 +13,12 @@ export function SessaoCores({ cores, mostrarImputs }: SassaoProps) {
   const Iputs = cores.map((cor, index) => (
     <Input 
       key={index}
-      tipoInput="cor"
+      tipoSessao="cores"
       texto={cor} 
+      value={cor}
+      tipoInput="checkbox"
     />
   ))
-
-  console.log(mostrarImputs)
 
   return (
 
@@ -48,17 +48,10 @@ export function SessaoCores({ cores, mostrarImputs }: SassaoProps) {
           Cores
         </TituloA>
         <WrapperInputs
-          mostraTudo={mostraTudo}
+          mostraTudo={true}
         >
           {Iputs} 
         </WrapperInputs>
-        {!mostraTudo && (
-          <BotaoMostraMaisCores
-            onClick={() => setMostraTudo(true)}
-          >
-            Ver todas as cores
-          </BotaoMostraMaisCores>
-        )}   
       </WrapperFormA>
      
     )

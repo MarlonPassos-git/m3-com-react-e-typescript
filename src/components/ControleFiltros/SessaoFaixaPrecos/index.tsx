@@ -4,14 +4,22 @@ import { Titulo, TituloA, WrapperForm, WrapperFormA, WrapperInputs } from "./est
 interface SassaoProps {
     faixaPrecos: {
         text: string;
-        value: number[];
+        value: string;
     }[],
     mostrarImputs?: boolean;
 }
 
 export function SessaoFaixaPrecos ({faixaPrecos, mostrarImputs}: SassaoProps) {
 
-  
+  const inputs = faixaPrecos.map(({text, value}, index) => (
+    <Input 
+      key={index}
+      tipoSessao="faixaPrecos"
+      texto={text}
+      value={value}
+      tipoInput="radio"
+    />
+  ))
 
   return (
 
@@ -22,13 +30,7 @@ export function SessaoFaixaPrecos ({faixaPrecos, mostrarImputs}: SassaoProps) {
           Faixa de Preço
         </Titulo>
         <WrapperInputs>
-        {faixaPrecos.map(({text}, index) => (
-            <Input 
-              key={index}
-              tipoInput="faixaPreco"
-              texto={text}
-            />
-          ))}
+          {inputs}
         </WrapperInputs>
       </WrapperForm>
     ): 
@@ -38,13 +40,7 @@ export function SessaoFaixaPrecos ({faixaPrecos, mostrarImputs}: SassaoProps) {
           Faixa de Preço
         </TituloA>
         <WrapperInputs>
-        {faixaPrecos.map(({text}, index) => (
-            <Input 
-              key={index}
-              tipoInput="faixaPreco"
-              texto={text}
-            />
-          ))}
+          {inputs}
         </WrapperInputs>
       </WrapperFormA>
     )
