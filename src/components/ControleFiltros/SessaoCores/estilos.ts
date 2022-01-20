@@ -17,6 +17,17 @@ export const TituloA = styled.summary`
         font-size: 24px;
     cursor: pointer;
 
+    background-image: url('./images/seta_baixo.svg');
+    background-repeat: no-repeat;
+    background-position: right;
+
+
+    transition: all 0.3s;
+
+    &:focus-visible, &:hover{
+        font-weight: bold;
+    }
+
 `
 
 
@@ -27,6 +38,7 @@ export const WrapperForm = styled.div`
 export const WrapperFormA = styled.details`
     margin-bottom: 1.5rem;
     list-style: none;
+    
 
 `
 
