@@ -1,105 +1,117 @@
-import { createContext, ReactNode, useState, useContext, useEffect } from 'react'
-import { IProduto } from '../types/dadosProps'
+import {
+  createContext,
+  ReactNode,
+  useState,
+  useContext,
+  useEffect,
+} from "react";
+import { IProduto } from "../types/dadosProps";
 
-interface DadosProps { 
-    children: ReactNode;
+interface DadosProps {
+  children: ReactNode;
 }
 
 interface DadosContextProps {
-    todosProdutos: Array<IProduto>,
-    setTodosProdutos: (produtos:Array<IProduto>)=> void,
-    telaProdutos: Array<IProduto>,
-    setTelaProdutos: (produtos:Array<IProduto>)=> void,
-    produtosVisiveis: Array<IProduto>,
-    setProdutosVisiveis: (produtos:Array<IProduto>)=> void,
-    numeroProdutosTela: number,
-    setNumeroProdutosTela: (totalProdutosTela:number)=> void,
-    produtosPorVez: number,
-    filtros: IFiltros,
-    setFiltros: (filtros:IFiltros)=> void,
-    totalProdutosCarrinho : number, 
-    setTotalProdutosCarrinho: (totalProdutosCarrinho:number)=> void,
-    totalProdutos: number,
-
+  todosProdutos: Array<IProduto>;
+  setTodosProdutos: (produtos: Array<IProduto>) => void;
+  telaProdutos: Array<IProduto>;
+  setTelaProdutos: (produtos: Array<IProduto>) => void;
+  produtosVisiveis: Array<IProduto>;
+  setProdutosVisiveis: (produtos: Array<IProduto>) => void;
+  numeroProdutosTela: number;
+  setNumeroProdutosTela: (totalProdutosTela: number) => void;
+  produtosPorVez: number;
+  filtros: IFiltros;
+  setFiltros: (filtros: IFiltros) => void;
+  totalProdutosCarrinho: number;
+  setTotalProdutosCarrinho: (totalProdutosCarrinho: number) => void;
+  totalProdutos: number;
 }
 
 interface IFiltros {
-    'cores': string[],
-    'tamanhos': string[],
-    'faixaPrecos': string[]
+  cores: string[];
+  tamanhos: string[];
+  faixaPrecos: string[];
 }
 
-export const DadosContext = createContext({} as DadosContextProps )
+export const DadosContext = createContext({} as DadosContextProps);
 
 export const DadosProvider = ({ children }: DadosProps) => {
+  const [todosProdutos, setTodosProdutos] = useState<Array<IProduto>>([]);
+  const [telaProdutos, setTelaProdutos] = useState<Array<IProduto>>([]);
+  const produtosPorVez = 5;
+  const [numeroProdutosTela, setNumeroProdutosTela] =
+    useState<number>(produtosPorVez);
+  const [produtosVisiveis, setProdutosVisiveis] = useState<Array<IProduto>>([]);
+  const [filtros, setFiltros] = useState<IFiltros>({
+    cores: [],
+    tamanhos: [],
+    faixaPrecos: [],
+  });
+  const [totalProdutosCarrinho, setTotalProdutosCarrinho] = useState<number>(0);
+  const [totalProdutos, setTotalProdutos] = useState<number>(
+    telaProdutos.length
+  );
 
-    const [todosProdutos, setTodosProdutos] = useState<Array<IProduto>>([]);
-    const [telaProdutos, setTelaProdutos] = useState<Array<IProduto>>([]);
-    const produtosPorVez = 5;
-    const [numeroProdutosTela, setNumeroProdutosTela] = useState<number>(produtosPorVez);
-    const [produtosVisiveis, setProdutosVisiveis] = useState<Array<IProduto>>([]);
-    const [filtros, setFiltros] = useState<IFiltros>({cores:[], tamanhos:[], faixaPrecos:[]})
-    const [totalProdutosCarrinho, setTotalProdutosCarrinho] = useState<number>(0)
-    const [totalProdutos, setTotalProdutos] = useState<number>(telaProdutos.length)
+  useEffect(() => {
+    setProdutosVisiveis(telaProdutos.slice(0, numeroProdutosTela));
+  }, [telaProdutos, numeroProdutosTela]);
 
-    useEffect(() => {
-        setProdutosVisiveis(telaProdutos.slice(0, numeroProdutosTela));
-    
-        
-    }, [telaProdutos, numeroProdutosTela])
+  useEffect(() => {
+    const listItemsFiltered = todosProdutos.filter((item) => {
+      if (filtros.cores.length > 0) {
+        if (!filtros.cores.includes(item.color.toLowerCase())) return false;
+      }
+      if (filtros.tamanhos.length > 0) {
+        const has = item.size.find((size) =>
+          filtros.tamanhos.includes(size.toUpperCase())
+        );
 
+        if (!has) return false;
+      }
+      if (filtros.faixaPrecos.length > 0) {
+        let [minNumber, maxNumber] = filtros.faixaPrecos[0]
+          .split("_")
+          .map((Number) => +Number);
 
-    useEffect(() => {
-        
-        const listItemsFiltered = todosProdutos.filter((item) => {
-            if (filtros.cores.length > 0) {
-              if (!filtros.cores.includes(item.color.toLowerCase())) return false;
-            }
-            if (filtros.tamanhos.length > 0) {
-              const has = item.size.find((size) =>
-                filtros.tamanhos.includes(size.toUpperCase())
-              );
-        
-              if (!has) return false;
-            }
-            if (filtros.faixaPrecos.length > 0) {
-             let [minNumber, maxNumber] = filtros.faixaPrecos[0].split('_').map(Number=>+Number);
-        
-              if (item.price < minNumber || item.price > maxNumber) return false;
-            }
-            return true;
-          });
-          setTelaProdutos([...listItemsFiltered]);
-          
+        if (item.price < minNumber || item.price > maxNumber) return false;
+      }
+      return true;
+    });
+    setTelaProdutos([...listItemsFiltered]);
+  }, [filtros]);
 
-    
-    } , [filtros])
+  useEffect(() => {
+    setTotalProdutos(telaProdutos.length);
+    setNumeroProdutosTela(produtosPorVez);
+  }, [telaProdutos]);
 
-    useEffect(() => {
-        setTotalProdutos(telaProdutos.length)
-        setNumeroProdutosTela(produtosPorVez)
-    } , [telaProdutos])
-
-    
-    return (
-        <DadosContext.Provider
-            value={{
-                todosProdutos, setTodosProdutos,
-                telaProdutos, setTelaProdutos,
-                numeroProdutosTela, setNumeroProdutosTela,
-                produtosVisiveis, setProdutosVisiveis,
-                filtros, setFiltros,
-                produtosPorVez, totalProdutos,
-                totalProdutosCarrinho, setTotalProdutosCarrinho
-            }}
-        >
-            {children}
-        </DadosContext.Provider>
-    )
-}
+  return (
+    <DadosContext.Provider
+      value={{
+        todosProdutos,
+        setTodosProdutos,
+        telaProdutos,
+        setTelaProdutos,
+        numeroProdutosTela,
+        setNumeroProdutosTela,
+        produtosVisiveis,
+        setProdutosVisiveis,
+        filtros,
+        setFiltros,
+        produtosPorVez,
+        totalProdutos,
+        totalProdutosCarrinho,
+        setTotalProdutosCarrinho,
+      }}
+    >
+      {children}
+    </DadosContext.Provider>
+  );
+};
 
 export function useDados() {
-    const context = useContext(DadosContext);
+  const context = useContext(DadosContext);
 
-    return context
+  return context;
 }

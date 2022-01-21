@@ -4,16 +4,16 @@ interface ContainerProps {
   tipoSessao?: string;
 }
 
-
 export const Container = styled.label<ContainerProps>`
-    display: flex;
-    align-items: center;
-    font-size: var(--font-very-small);
-    margin-bottom: 6.7px;
-    cursor: pointer;
-    text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  font-size: var(--font-very-small);
+  margin-bottom: 6.7px;
+  cursor: pointer;
+  text-transform: capitalize;
 
-    ${({ tipoSessao }) => (tipoSessao === 'tamanhos' ) && 
+  ${({ tipoSessao }) =>
+    tipoSessao === "tamanhos" &&
     `
     display: grid;
     grid-template-columns: 1fr;
@@ -43,9 +43,8 @@ export const Container = styled.label<ContainerProps>`
         border-color: var(--primary);
       }
     }
-    `
-  }  
-`
+    `}
+`;
 
 export const Checkbox = styled.input`
   height: 1rem;
@@ -61,13 +60,10 @@ export const Checkbox = styled.input`
     padding: 0.125rem;
   }
 
-
   &:focus-visible {
     outline: var(--primary) solid 0.125rem;
     outline-offset: 0.063rem;
   }
-`
+`;
 
-export const Texto = styled.span`
-
-`
+export const Texto = styled.span``;

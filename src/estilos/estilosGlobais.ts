@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 export const EstilosGlobais = createGlobalStyle`
 
@@ -32,18 +32,17 @@ export const EstilosGlobais = createGlobalStyle`
         min(calc(-2.042rem + 13vw), 10.125rem)
     );
 
-    @media (min-width: 1500px) {  
+    @media (min-width: 1500px) {
         --spacing-container-padding: calc(-36.75rem + 50vw);
   }
 }
 
 body {
     background-color: var(--white);
-
     font-family: "Open Sans", sans-serif;
 }
 
 button,input[type="radio"] {
     cursor: pointer;
 }
-`
+`;

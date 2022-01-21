@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Modal } from "../Modal";
-import { Botao} from "./estilo";
-
+import { Botao } from "./estilo";
 
 interface IBotoesModal {
   gridArea: string;
@@ -9,13 +8,12 @@ interface IBotoesModal {
   titulo: string;
 }
 
-export function BotoesModal ({gridArea, children, titulo}:IBotoesModal) {
-
+export function BotoesModal({ gridArea, children, titulo }: IBotoesModal) {
   const [modalVisivel, setModalVisivel] = useState(false);
 
   useEffect(() => {
-      document.body.style.overflow = modalVisivel ? "hidden" : "auto";
-  }, [modalVisivel])
+    document.body.style.overflow = modalVisivel ? "hidden" : "auto";
+  }, [modalVisivel]);
 
   return (
     <>
@@ -27,12 +25,12 @@ export function BotoesModal ({gridArea, children, titulo}:IBotoesModal) {
         {titulo}
       </Botao>
       {modalVisivel && (
-      <Modal 
-        titulo={titulo}
-        fecharModal={setModalVisivel}
-        children={children}
-      />
+        <Modal
+          titulo={titulo}
+          fecharModal={setModalVisivel}
+          children={children}
+        />
       )}
     </>
-  )
+  );
 }
