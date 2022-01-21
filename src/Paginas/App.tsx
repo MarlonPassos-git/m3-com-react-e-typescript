@@ -1,5 +1,5 @@
 import "the-new-css-reset/css/reset.css"
-import { Cabecario } from  "../components/Cabecario"
+import { Cabecario } from  "../components/Cabecalho"
 import { Menu } from "../components/Menu"
 import { RodaPe } from "../components/RodaPe"
 import { DadosProvider } from "../context/dados"

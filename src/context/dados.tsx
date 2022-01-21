@@ -69,8 +69,6 @@ export const DadosProvider = ({ children }: DadosProps) => {
             }
             return true;
           });
-
-          console.log(listItemsFiltered);
           setTelaProdutos([...listItemsFiltered]);
           
 

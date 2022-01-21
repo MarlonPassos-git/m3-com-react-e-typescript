@@ -12,7 +12,6 @@ export function BotaoMostraMaisItens() {
     <Container
       onClick={() => {
         setNumeroProdutosTela(numeroProdutosTela + produtosPorVez)
-        console.log(totalProdutos);
       }
       }
     >
