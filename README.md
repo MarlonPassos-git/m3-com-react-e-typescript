@@ -1,46 +1,73 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center" class="line-1 anim-typewriter">Desafio M3 </h1>
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
+<img align="center"  class="img__project " src="./screen.gif">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<img align="center"  class="img__project " src="./github/acessibilidade.png">
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `yarn test`
+<div align="center"  class="links">
+    <a href="#the_challenge">O desafio</a> |
+     <a href="#links">Links</a> |
+      <a href="#built_with">Ferramentas usadas</a> |
+       <a href="#author">Coisa para se fazer</a>  |
+       <a href="#resources">Recursos</a>
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2 id="the_challenge"> 🌋 O desafio</h2>
 
-### `yarn build`
+Essa é a solução de um desafio proposto pela [Agência Digital M3](https://m3ecommerce.com/)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+O objetivo desse desafio foi para avaliar os conhecimentos fundamentais de front end, por isso foi pedido que não fosse usado nenhum framework, ou se fossse usar algo usasse React JS.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [x] HTML5 e CSS3
+- [x] Requisição a API para obter os produtos
+- [x] Funcionalidade: Filtrar produtos por cor, tamanho e preço.
+- [x] Funcionalidade: Adicionar produto ao carrinho.
+- [x] Funcionalidade: Carregar mais produtos.
+- [x] Não utilizar Bootstrap, Foundation Css, Semantic ui ou semelhantes ;
+- [x] Responsividade
 
-### `yarn eject`
+<h2 id="Observações">🔎 Observações</h2>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- Como foi deixado bem explicito que esse desafio era para os validar os conhecimentos fundamentais, porem eu vi que a M3 usa ferramentas como react e typescrip EU DESIDI FAZER DUAS VERÇÕES desse mesmo projetos, uma usando __HTML, CSS e JavaScript__ e outra Verção usando __React JS e Typescript__ + CSSinJS.
+- No relatorio de acessibilidade do **lighthouse** ficou mostrando que teve um erro de acessibilidade com o botão de mostras mais itens devido as suas cores, porem como eu tentei deixar o mais proximo possivel do **FIGMA** eu deixei esse pequeno detalhe.
+- Em vez de colocar as imagens otimizadas localmente nos aquivos do projeto eu otimizei elas para **.webp**(-95% do tamanho) e coloquei elas em um serviço de hospedagem de imagens
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<h2 id="links">🔗 Links</h2>
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Site online:  [https://m3-com-react-e-typescript.vercel.app/](https://m3-com-react-e-typescript.vercel.app/)
+- Verção do projeto feita com **HTML**, **CSS** e **JavaScript**: [https://github.com/MarlonPassos-git/Desenvolvedor-M3](https://github.com/MarlonPassos-git/Desenvolvedor-M3)
+- Verção do projeto feita com **React JS**, **Typescript** e **StyledComponents**: [https://github.com/MarlonPassos-git/m3-com-react-e-typescript](https://github.com/MarlonPassos-git/m3-com-react-e-typescript) 
 
-## Learn More
+<h2 id="built_with">👷‍♂️ Ferramentas usadas</h2>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+-  <img src="https://img.icons8.com/color/20/000000/typescript.png"/> TypeScrpt
+-  <img class="icon" height="20" src="https://avatars-04.gitter.im/group/iv/4/5800767ed73408ce4f2e2711"/> Styled-Components
+-  <img src="https://img.icons8.com/plasticine/20/000000/react.png"/> React JS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+
+
+<h2 id="author">👨‍🎓 Coisa para se fazer </h2>
+
+
+<h2 id="resources">🚧 Pobremas A corrigir</h2>
+
+- [ ] Quando clica no botão de ver mais itens, a pagina automaticamente scrolla para o final da pagina.
+- [ ] Verificar quando uma musica não tem preview e mostrar uma capa de tipo sem preview ou um aviso para o usuario
+
+<h2 id="resources">📚 Recursos</h2>
+
+
+- Para alguns elementos que eu queria um tamanho diferente em varias telas eu usei uma bibliote que eu to desenvolvendo que se chama progressive-size, que tem [origem nesse  artigo](https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/#for-those-who-dont-mind-that-edge-case), é por isso que alguns elementos o tamanho nao ta em PX mais sim em função css usando o clamp, min, max e calc.
+- Documentation [react JS](https://reactjs.org/docs/getting-started.html) 
+
+
+
+

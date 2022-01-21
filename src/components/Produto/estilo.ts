@@ -30,7 +30,7 @@ export const WraperImg = styled.a`
 
     &:focus-visible{
 
-      border: 1px solid var(--primary);
+      border: 0.063rem  solid var(--primary);
 
       img {
         transform: scale(1.15);
@@ -70,10 +70,10 @@ export const Botao = styled.button`
     transition-duration: 0.5s;
 
     &:hover, &:focus-visible{
-      border: 3px solid var(--black);
+      border: 0.188rem solid var(--black);
       background-color: var(--white);
       color: var(--black);
-      transform: perspective(1px) translateZ(0);
+      transform: perspective(0.063rem ) translateZ(0);
     }
 
 `

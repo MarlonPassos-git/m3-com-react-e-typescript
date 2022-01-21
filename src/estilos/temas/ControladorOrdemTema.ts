@@ -3,11 +3,11 @@ export const padrao = {
       position: 'absolute',
       bottom: 0,
       left: 0,
-      transform: 'translate(-1px ,100%)',
+      transform: 'translate(-0.063rem  ,100%)',
       'align-items': 'center',
-      height: '107px',
+      height: '6.688rem',
       width: '8.875rem',
-      border: 'var(--black) solid 0.063rem',
+      border: 'var(--black) solid 0.063rem ',
       'font-size': 'var(--font-small)',
     },
     opcao: {
@@ -22,8 +22,8 @@ export const modal =  {
     border: 'none',
     color: 'var(--black)',
     'line-height': '2.375rem',
-    gap: '30px',
-    'font-size': '22px'
+    gap: '1.875rem',
+    'font-size': '1.375rem'
   },
   opcao: {
         

@@ -9,7 +9,7 @@ export const Container = styled.button`
     justify-self: center;
     height: 2.188rem;
     width: 10.938rem;
-    margin: 70px 0 35px;
+    margin: 4.375rem 0 2.188rem;
     background-color: var(--primary);
     color: var(--white);
     font-size: var(--font-very-small);
@@ -21,10 +21,10 @@ export const Container = styled.button`
 
 
     &:hover, &:focus-visible{
-      border: 3px solid var(--primary);
+      border: 0.188rem solid var(--primary);
       background-color: var(--white);
       color: var(--primary);
-      transform: perspective(1px) translateZ(0);
+      transform: perspective(0.063rem ) translateZ(0);
     }
 
     

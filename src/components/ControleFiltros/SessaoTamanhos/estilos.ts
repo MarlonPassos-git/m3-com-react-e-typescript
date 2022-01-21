@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Titulo = styled.h2`
-        margin-bottom: 0.875rem;
+        margin-bottom: 19px;
         
         font-size: var(--font-small);
         color: var(--black);
@@ -14,7 +14,7 @@ export const TituloA = styled.summary`
         font-size: var(--font-small);
         color: var(--black);
         text-transform: uppercase;
-        font-size: 24px;
+        font-size: 1.5;
     cursor: pointer;
 
     transition: all 0.3s;
@@ -48,6 +48,6 @@ export const WrapperInputs = styled.div`
       flex-wrap: wrap;
       gap: 0.5rem;
       margin-bottom: 1.5rem;
-      max-width: 157px;
+      max-width: 9.813rem;
 `
 

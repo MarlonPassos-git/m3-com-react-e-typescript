@@ -9,14 +9,17 @@ interface ProdutoProps {
 export function Produto({dadosProduto}: ProdutoProps ) {
 
   const {totalProdutosCarrinho, setTotalProdutosCarrinho} = useDados();
-  const {image, name, price, parcelamento} = dadosProduto
+  const {image, name, price, parcelamento, date} = dadosProduto
   const precoFormatado = formataParaReal(price)
   const totalParcealas = parcelamento[0]
   const valorParcela = formataParaReal(parcelamento[1])
   
 
   return (
-    <Container>
+    <Container
+      data-cy='produto'
+      data-data={date}
+    >
             <WraperImg href="#">
                 <Img src={image} alt={name} />
             </WraperImg>

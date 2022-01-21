@@ -27,7 +27,7 @@ export const WrapperInputs = styled.div<WrapperInputsProps>`
         flex-wrap: wrap;
         gap: 0.5rem;
         margin-bottom: 1.5rem;
-        max-width: 157px;
+        max-width: 9.813rem;
         `
     }}
 `

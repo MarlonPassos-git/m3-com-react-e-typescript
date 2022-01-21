@@ -27,7 +27,9 @@ export function ControleFiltros({mostrarImputs}: ControleFiltrosProps) {
 
   return (
       
-    <Container>  
+    <Container
+      data-cy='controle-filtros'
+    >  
       <SessaoCores mostrarImputs={mostrarImputs} cores={cores}/>
       <SessaoTamanhos mostrarImputs={mostrarImputs} tamanhos={tamanhos}/>
       <SessaoFaixaPrecos mostrarImputs={mostrarImputs} faixaPrecos={faixaPrecos}/>

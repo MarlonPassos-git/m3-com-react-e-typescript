@@ -6,8 +6,8 @@ export const Container = styled.main`
         "title order" 9.313rem
         "filters produtsList"
         ". button"
-        / 13.2088rem 1fr;
-    column-gap: 2.75rem;
+        / 13.2088rem 1fr
+    ;
 
     min-height: calc(100vh - 4rem - 2.063rem);
     padding: 0 var(--spacing-container-padding);
@@ -18,10 +18,6 @@ export const Container = styled.main`
         "filtrar ordenar "
         "produtsList produtsList"
         "button button"/1fr 1fr;
-
-
-        -moz-column-gap: 0;
-        column-gap: 0;
     }
 
 `
@@ -37,7 +33,7 @@ export const WrapperInputs = styled.div<WrapperInputsProps>`
         flex-wrap: wrap;
         gap: 0.5rem;
         margin-bottom: 1.5rem;
-        max-width: 157px;
+        max-width: 9.813;
         `
     }}
 `

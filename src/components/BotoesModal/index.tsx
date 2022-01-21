@@ -20,6 +20,7 @@ export function BotoesModal ({gridArea, children, titulo}:IBotoesModal) {
   return (
     <>
       <Botao
+        data-cy={`botao-modal-${gridArea}`}
         gridArea={gridArea}
         onClick={() => setModalVisivel(true)}
       >

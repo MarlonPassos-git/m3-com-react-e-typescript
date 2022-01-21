@@ -9,7 +9,7 @@ export const Container = styled.label<ContainerProps>`
     display: flex;
     align-items: center;
     font-size: var(--font-very-small);
-    margin-bottom: 0.625rem;
+    margin-bottom: 6.7px;
     cursor: pointer;
     text-transform: capitalize;
 
@@ -63,8 +63,8 @@ export const Checkbox = styled.input`
 
 
   &:focus-visible {
-    outline: var(--primary) solid 2px;
-    outline-offset: 1px;
+    outline: var(--primary) solid 0.125rem;
+    outline-offset: 0.063rem;
   }
 `
 

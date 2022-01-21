@@ -25,9 +25,12 @@ export function ListaProdutos () {
 
   
   return (
-    <Container>
+    <Container
+      data-cy='listaProdutos'
+    >
       {produtosVisiveis.map((produto)=> (
         <Produto 
+        
           key={produto.id} 
           dadosProduto={produto}
         />

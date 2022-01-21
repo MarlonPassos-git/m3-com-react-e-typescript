@@ -18,6 +18,7 @@ export function ControladorOrdem({estaNoModal}: ControladorOrdemProps) {
   const todasOpcoesComponent = totasOpcoes.map((opcao, index) => (
     <Opcao 
       key={index} 
+      data-cy={`opcao-${opcao.toLocaleLowerCase()}`}
       onClick={handleOpcao}
       onKeyDown={({key}) => key === 'Enter' && handleOpcao}
     >
@@ -39,14 +40,20 @@ export function ControladorOrdem({estaNoModal}: ControladorOrdemProps) {
   return (
 
     (estaNoModal) ? (
-      <ThemeProvider theme={modal}>
-        <Opcoes  > 
+      <ThemeProvider 
+        theme={modal}
+        
+      >
+        <Opcoes  
+          data-cy="opcoes-ordenacao"
+        > 
         {todasOpcoesComponent}
         </Opcoes>
       </ThemeProvider>
       
     ) :(
       <Container
+      data-cy="controlador-ordem"
       monstrarOpcoes={monstrarOpcoes}
       onClick={() => setMonstrarOpcoes(!monstrarOpcoes)}
       onKeyDown={({key}) => key === 'Enter' && setMonstrarOpcoes(!monstrarOpcoes)}
@@ -56,7 +63,9 @@ export function ControladorOrdem({estaNoModal}: ControladorOrdemProps) {
       {
         monstrarOpcoes && 
         <ThemeProvider theme={padrao}>
-        <Opcoes  > 
+        <Opcoes  
+          data-cy="opcoes-ordenacao"
+        > 
         {todasOpcoesComponent}
       </Opcoes>
       </ThemeProvider>

@@ -25,7 +25,7 @@ export const TotalItens = styled.span`
   position: absolute;
   bottom: 0;
   right: 0;
-  transform: translate(3px);
+  transform: translate(0.188rem);
 
   height: 0.75rem;
   width: 0.75rem;

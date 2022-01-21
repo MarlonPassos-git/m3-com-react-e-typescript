@@ -18,7 +18,7 @@ export const Container = styled.form<ContainerProps>`
     
     height: 2.625rem;
     width: 8.875rem;
-    border: var(--black) solid 0.063rem;
+    border: var(--black) solid 0.063rem ;
     padding-left: 0.625rem;
 
     text-align: start;

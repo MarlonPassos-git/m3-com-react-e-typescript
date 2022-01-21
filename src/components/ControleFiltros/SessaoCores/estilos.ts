@@ -14,7 +14,7 @@ export const TituloA = styled.summary`
         font-size: var(--font-small);
         color: var(--black);
         text-transform: uppercase;
-        font-size: 24px;
+        font-size: 1.5rem;
     cursor: pointer;
 
     background-image: url('./images/seta_baixo.svg');
@@ -60,7 +60,7 @@ export const BotaoMostraMaisCores = styled.button`
     font-size: 0.75rem;
     text-decoration: underline;
     position: relative;
-    
+
     &:hover, &:focus-visible {
         font-weight: bold;
     }

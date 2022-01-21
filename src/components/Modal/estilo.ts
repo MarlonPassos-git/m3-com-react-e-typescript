@@ -10,15 +10,15 @@ export const Container = styled.div`
     display: grid;
     grid-template:
         "title button" 4.375rem
-        "line line" 30px
+        "line line" 1.875rem
         "content content" 
-        "botaoFiltrar botaoLimparFiltros" 35px
+        "botaoFiltrar botaoLimparFiltros" 2.188rem
         /1fr 1fr;
 
     background: var(--white);
-    padding: 0 16px;
-    column-gap: 23px;
-    padding-bottom: 17px;
+    padding: 0 1rem;
+    column-gap: 1.438rem;
+    padding-bottom: 1.063rem;
 
     overflow-y: scroll;
 
@@ -45,9 +45,9 @@ export const ButtonFechar = styled.button`
 export const Linha = styled.hr`
       grid-area: line;
     background: var(--black);
-    height: 0.063rem;
-    width: calc(100% + 32px);
-    transform: translateX(-16px);
+    height: 0.063rem ;
+    width: calc(100% + 2rem);
+    transform: translateX(-1rem);
 `
 
 export const WrapperContent = styled.div`
@@ -70,13 +70,13 @@ export const BotaoFiltrar = styled.button`
 
     width: 100%;
     text-transform: uppercase;
-    font-size: 14px;
-    height: 35px;
+    font-size: 0.875rem;
+    height: 2.188rem;
     text-align: center;
 
     background-color: var(--primary);
     color: var(--white);    
-    border: var(--primary) solid 3px;
+    border: var(--primary) solid 0.188rem;
     transition: all 0.3s;
 
     &:hover {
@@ -93,7 +93,7 @@ export const BotaoLimparFiltros = styled(BotaoFiltrar)`
     
     background-color: var(--white);
     color: #666666;  
-    border: #666666 solid 1px;
+    border: #666666 solid 0.063rem ;
 
     &:hover {
         background-color: #666666;;
