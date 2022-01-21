@@ -9,7 +9,8 @@ export const Container = styled.ul`
     column-gap: max(1.1875rem, min(0.25rem + 4vw, 4rem));
     row-gap: max(1.125rem, min(0.667rem + 2vw, 2.5rem));
     justify-content: center;
-    
+
+    margin-bottom: 4.375rem;    
 
     
 `

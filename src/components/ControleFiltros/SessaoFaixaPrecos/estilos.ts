@@ -15,7 +15,7 @@ export const TituloA = styled.summary`
         color: var(--black);
         text-transform: uppercase;
 
-        font-size: 1.5;
+        font-size: 1.5rem;
     cursor: pointer;
 
     background-image: url('./images/seta_baixo.svg');

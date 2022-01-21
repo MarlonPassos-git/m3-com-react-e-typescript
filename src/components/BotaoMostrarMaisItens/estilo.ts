@@ -9,7 +9,6 @@ export const Container = styled.button`
     justify-self: center;
     height: 2.188rem;
     width: 10.938rem;
-    margin: 4.375rem 0 2.188rem;
     background-color: var(--primary);
     color: var(--white);
     font-size: var(--font-very-small);

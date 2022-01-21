@@ -31,7 +31,7 @@ export function Menu () {
                 </BotoesModal>
                 <BotoesModal
                     gridArea="ordenar"
-                    titulo="Ordernar"
+                    titulo="Ordenar"
                 >
                     <ControladorOrdem
                         estaNoModal={true}

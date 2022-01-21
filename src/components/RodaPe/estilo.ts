@@ -5,6 +5,7 @@ export const Container = styled.footer`
     justify-content: center;
     align-items: center;
 
+    margin-top: 2.188rem;
     height: 2.063rem;
     width: 100%;
     background-color: var(--black);

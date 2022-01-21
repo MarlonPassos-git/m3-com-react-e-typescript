@@ -9,12 +9,12 @@ export const Titulo = styled.h2`
 `
 
 export const TituloA = styled.summary`
-        margin-bottom: 0.875rem;
-        
-        font-size: var(--font-small);
-        color: var(--black);
-        text-transform: uppercase;
-        font-size: 1.5;
+    margin-bottom: 0.875rem;
+    
+    font-size: var(--font-small);
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 1.5rem;
     cursor: pointer;
 
     transition: all 0.3s;
