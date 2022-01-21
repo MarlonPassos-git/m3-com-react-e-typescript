@@ -2,9 +2,12 @@
 <h1 align="center" class="line-1 anim-typewriter">Desafio M3 </h1>
 
 
+<h2>Preview</h2>
+<img align="center"  class="img__project " src="./github//gif.gif">
 
-<img align="center"  class="img__project " src="./screen.gif">
+<br>
 
+<h2>Acessibilidade</h2>
 <img align="center"  class="img__project " src="./github/acessibilidade.png">
 
 
@@ -52,15 +55,41 @@ O objetivo desse desafio foi para avaliar os conhecimentos fundamentais de front
 
 
 
+<h2 id="funcionalidade"> ⚙ Funcionalidades</h2>
+
+- [x] Criar o projeto sem usar nenhuma biblioteca de componentes pre prontos 
+- [x] criar verção com HTML, CSS, JavaScript
+- [x] Pegar os dados da API e renderizar na tela 
+- [x] Filtras os produtos por 
+  - [x] Cor.
+  - [x] Tamannho.
+  - [x] Preço.
+- [x] Reorganizar a ordem dos produtos
+  - [x] Mais recente
+  - [x] Maior preço 
+  - [x] Menor preço
+- [x] Otimizar as imagens 
+- [x] Adicionar produtos no carrinho quando clicar em comprar 
+- [x] Formulario ficar sincronizado com a verção descktop e mobile 
+- [x] O botão de mostrar mais itens soma quando não tem mais nada produtos   
+- [x] Efeito de hover em todos os elementos clicaveis
+- [x] Efeito de foco em todos os elementos usando o TAB
+- [x] Colocar o site no AR
+- [x] Colocar a API no AR 
 
 
-<h2 id="author">👨‍🎓 Coisa para se fazer </h2>
+<h2 id="author">👨‍🎓 Autor </h2>
 
+- nome: Marlon Felipe dos Passos 
+- email: marlonfelipepassv2@gmail.com
 
-<h2 id="resources">🚧 Pobremas A corrigir</h2>
+<h2 id="resources">🚧 Pobremas A corrigir</h2
 
-- [ ] Quando clica no botão de ver mais itens, a pagina automaticamente scrolla para o final da pagina.
-- [ ] Verificar quando uma musica não tem preview e mostrar uma capa de tipo sem preview ou um aviso para o usuario
+- [x] Arrumar o controle por TABs da pagina (ordem e mostrar elementos selecionados)
+- [ ] Tem que adicionar os restante dos textes com o cypress
+- [ ] Adicionar um Lasy Load nos elementos do menu para evitar download codigo desnecessario em resoluções especificas 
+- [ ] Adicionar MEMO nos componentes para evitar renderização desnecessarias
+- [ ] Adicionar uma mensagem para o usuario quando não tiver nenhum produto nos filtros que ele selecionou
 
 <h2 id="resources">📚 Recursos</h2>
 
