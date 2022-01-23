@@ -47,13 +47,13 @@ O objetivo deste desafio foi para avaliar os conhecimentos fundamentais de front
 
 <h2 id="built_with">👷‍♂️ Ferramentas utilizadas</h2>
 
-- Verção com React JS:
+- Versão com React JS:
 -  <img src="https://img.icons8.com/color/20/000000/typescript.png"/> TypeScript;
 -  <img class="icon" height="20" src="https://avatars-04.gitter.im/group/iv/4/5800767ed73408ce4f2e2711"/> Styled-Components;
 -  <img height="20" src="https://img.icons8.com/plasticine/20/000000/react.png"/> ReactJS.
 
 
-- Verção Vanilla:
+- Versão Vanilla:
 -  <img height="20" src="https://cdn-icons-png.flaticon.com/512/732/732212.png"/> HTML5;
 -  <img height="20" src="https://raw.githubusercontent.com/github/explore/6c6508f34230f0ac0d49e847a326429eefbfc030/topics/css/css.png"/> CSS3;
 -  <img height="20" src="https://cdn.iconscout.com/icon/free/png-256/javascript-2038874-1720087.png"/> JavaScript;
